@@ -1,165 +1,217 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gaming World | Suscripciones</title>
-
+    <meta name="theme-color" content="#06131b">
+    <title>Gaming World | Tu universo gamer</title>
     <link rel="stylesheet" href="styles.css">
 
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
-
 </head>
 
 <body>
+    <!-- Fondo decorativo -->
+    <div class="background-effect" aria-hidden="true"></div>
 
-    <!-- FONDO DECORATIVO -->
-    <div class="background-effect"></div>
+    <!-- Encabezado simplificado: solo logo, sin menú -->
+    <header class="navbar">
+        <a href="#inicio" class="brand" aria-label="Gaming World, inicio">
+            <span class="brand-icon">🎮</span>
+            GAMING <span class="green">WORLD</span>
+        </a>
+        <span class="navbar-tag">YOUR GAMING COMMUNITY</span>
+    </header>
 
-    <!-- CONTENEDOR PRINCIPAL -->
-    <main class="container">
-
-        <!-- LOGO -->
-        <header class="header">
-
-            <div class="logo-icon">
-                🎮
-            </div>
-
-            <div class="logo">
-                GAMING <span>WORLD</span>
-            </div>
-
-            <div class="tag">
-                YOUR NEXT LEVEL STARTS HERE
-            </div>
-
-        </header>
-
-        <!-- BIENVENIDA -->
-        <section class="welcome">
-
-            <h1>
-                ¡ÚNETE A LA COMUNIDAD!
-            </h1>
-
-            <p class="subtitle">
-                El siguiente nivel te espera.
-                Descubre noticias, videojuegos, novedades
-                y contenido exclusivo diseñado para verdaderos gamers.
-            </p>
-
-        </section>
-
-        <div class="separator"></div>
-
-        <!-- FORMULARIO -->
-        <section class="subscription">
-
-            <h2>
-                DESBLOQUEA NUEVAS EXPERIENCIAS
-            </h2>
-
-            <p class="form-description">
-                Introduce tu correo electrónico y forma parte
-                de nuestra comunidad.
-            </p>
-
-            <form id="formulario">
-
-                <label for="email">
-                    TU CORREO ELECTRÓNICO
-                </label>
-
-                <div class="input-container">
-
-                    <span class="input-icon">✉</span>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="user_email"
-                        placeholder="player@example.com"
-                        required
-                    >
-
+    <main id="inicio">
+        <!-- Hero centrado -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    GAMING · TECNOLOGÍA · ENTRETENIMIENTO
                 </div>
 
-                <button type="submit" id="boton">
-                    ⚡ ¡QUIERO SUBIR DE NIVEL!
-                </button>
+                <h1>
+                    Que el juego
+                    <span>nunca termine.</span>
+                </h1>
 
-            </form>
+                <p class="hero-description">
+                    Explora un universo lleno de videojuegos, novedades,
+                    tecnología y experiencias. Únete a nuestra comunidad
+                    y lleva tu pasión gamer al siguiente nivel.
+                </p>
 
-            <p id="mensaje" role="status" aria-live="polite"></p>
+                <!-- Formulario EmailJS -->
+                <form id="formulario" class="subscription-form">
+                    <label for="email">ÚNETE A NUESTRA COMUNIDAD</label>
 
-            <p class="privacy">
-                🔒 Tu información está protegida.
-                No recibirás spam.
-            </p>
+                    <div class="form-row">
+                        <input
+                            type="email"
+                            id="email"
+                            name="user_email"
+                            placeholder="Tu correo electrónico"
+                            autocomplete="email"
+                            required
+                        >
+                        <button type="submit" id="boton">
+                            ⚡ Suscribirme
+                        </button>
+                    </div>
 
+                    <p class="form-note">
+                        🔒 Sin spam. Solo contenido para verdaderos gamers.
+                    </p>
+                    <p id="mensaje" role="status" aria-live="polite"></p>
+                </form>
+
+                <div class="hero-stats">
+                    <div><strong>01</strong><span>Gaming</span></div>
+                    <div><strong>02</strong><span>Tecnología</span></div>
+                    <div><strong>03</strong><span>Comunidad</span></div>
+                </div>
+            </div>
+
+            <!-- Slider de imágenes -->
+            <div class="slider-container" aria-label="Galería gaming">
+                <div class="slider" id="slider">
+                    <div class="slide active">
+                        <img
+                            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400"
+                            alt="Competencia gaming y esports"
+                        >
+                        <div class="slide-overlay">
+                            <span>01 / 03</span>
+                            <h2>Vive la experiencia.</h2>
+                            <p>El mundo gaming te espera.</p>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <img
+                            src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=1400"
+                            alt="Estación de videojuegos"
+                            loading="lazy"
+                        >
+                        <div class="slide-overlay">
+                            <span>02 / 03</span>
+                            <h2>Explora nuevos mundos.</h2>
+                            <p>Descubre experiencias increíbles.</p>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <img
+                            src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=1400"
+                            alt="Experiencia de videojuegos"
+                            loading="lazy"
+                        >
+                        <div class="slide-overlay">
+                            <span>03 / 03</span>
+                            <h2>Sube de nivel.</h2>
+                            <p>La pasión por jugar nos conecta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="slider-arrow prev" id="prev"
+                    aria-label="Imagen anterior">‹</button>
+                <button type="button" class="slider-arrow next" id="next"
+                    aria-label="Imagen siguiente">›</button>
+
+                <div class="slider-dots" id="slider-dots" aria-label="Seleccionar diapositiva">
+                    <button type="button" class="dot active" aria-label="Diapositiva 1"></button>
+                    <button type="button" class="dot" aria-label="Diapositiva 2"></button>
+                    <button type="button" class="dot" aria-label="Diapositiva 3"></button>
+                </div>
+            </div>
         </section>
 
-        <!-- BENEFICIOS -->
-        <section class="beneficios">
-
-            <div class="benefit">
-                <span>🎮</span>
-                <p>GAMING</p>
+        <!-- Sección de beneficios -->
+        <section class="universe" id="universo">
+            <div class="section-heading">
+                <span class="eyebrow">EXPLORA NUESTRO UNIVERSO</span>
+                <h2>Más que videojuegos. <span>Una pasión.</span></h2>
+                <p>Descubre todo lo que hace especial al mundo de los videojuegos.</p>
             </div>
 
-            <div class="benefit">
-                <span>🏆</span>
-                <p>NOTICIAS</p>
-            </div>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Gaming</h3>
+                    <p>Descubre videojuegos, experiencias, lanzamientos y novedades.</p>
+                </article>
 
-            <div class="benefit">
-                <span>⚡</span>
-                <p>NOVEDADES</p>
-            </div>
+                <article class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Esports</h3>
+                    <p>Mantente al día con competencias, torneos y el mundo competitivo.</p>
+                </article>
 
+                <article class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Tecnología</h3>
+                    <p>Conoce hardware, periféricos, innovación y tendencias gaming.</p>
+                </article>
+            </div>
         </section>
 
-        <!-- FOOTER -->
-        <footer class="footer">
+        <!-- Presentación de la comunidad -->
+        <section class="about">
+            <div class="about-content">
+                <span class="eyebrow">QUIÉNES SOMOS</span>
+                <h2>Una comunidad. <span>Un mismo universo.</span></h2>
+                <p>
+                    Gaming World nace de la pasión por los videojuegos y la tecnología.
+                    Nuestro objetivo es compartir novedades, experiencias y contenido
+                    que conecte a todos los amantes del gaming.
+                </p>
+                <a href="#formulario" class="about-button">Forma parte de nosotros →</a>
+            </div>
 
-            <p>© 2026 GAMING WORLD</p>
-
-            <span>LEVEL UP YOUR EXPERIENCE</span>
-
-        </footer>
-
+            <div class="about-decoration" aria-hidden="true">
+                <span>G</span>
+                <span class="decoration-glow"></span>
+            </div>
+        </section>
     </main>
 
-    <!-- JAVASCRIPT EMAILJS -->
-    <script>
+    <footer class="footer">
+        <a href="#inicio" class="brand">
+            🎮 GAMING <span class="green">WORLD</span>
+        </a>
+        <p>Que el juego nunca termine.</p>
+        <div class="footer-bottom">
+            © 2026 Gaming World. Todos los derechos reservados.
+        </div>
+    </footer>
 
-        // INICIALIZAR EMAILJS
+    <script>
+        /* =====================================
+           EMAILJS
+           Sustituye las tres credenciales.
+        ===================================== */
+
         emailjs.init({
             publicKey: "9uQByMYAkrXt8btkS"
         });
 
-        // CAPTURAR FORMULARIO
-        document.getElementById("formulario")
-        .addEventListener("submit", async function(event) {
+        const formulario = document.getElementById("formulario");
+        const boton = document.getElementById("boton");
+        const mensaje = document.getElementById("mensaje");
 
+        formulario.addEventListener("submit", async function (event) {
             event.preventDefault();
 
-            const boton = document.getElementById("boton");
-            const mensaje = document.getElementById("mensaje");
-
             boton.disabled = true;
-            boton.textContent = "⚡ ENVIANDO...";
-
+            boton.textContent = "Enviando...";
             mensaje.textContent = "";
+            mensaje.className = "";
 
             try {
-
-                // ENVIAR CORREO
                 await emailjs.sendForm(
                     "service_4cpwq4h",
                     "template_p4zz2ff",
@@ -168,30 +220,83 @@
 
                 mensaje.textContent =
                     "¡GG! Te has unido a Gaming World. Revisa tu correo.";
-
                 mensaje.className = "success";
-
-                this.reset();
-
-            } catch(error) {
-
-                console.error("Error:", error);
-
+                formulario.reset();
+            } catch (error) {
+                console.error("Error de EmailJS:", error);
                 mensaje.textContent =
-                    "No se pudo completar la suscripción. Inténtalo nuevamente.";
-
+                    "No se pudo enviar tu suscripción. Inténtalo nuevamente.";
                 mensaje.className = "error";
-
             } finally {
-
                 boton.disabled = false;
-                boton.textContent = "⚡ ¡QUIERO SUBIR DE NIVEL!";
-
+                boton.textContent = "⚡ Suscribirme";
             }
-
         });
 
-    </script>
+        /* =====================================
+           SLIDER AUTOMÁTICO Y MANUAL
+        ===================================== */
 
+        const slider = document.getElementById("slider");
+        const slides = Array.from(document.querySelectorAll(".slide"));
+        const dots = Array.from(document.querySelectorAll(".dot"));
+        const nextButton = document.getElementById("next");
+        const prevButton = document.getElementById("prev");
+
+        let currentSlide = 0;
+        let sliderInterval;
+
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
+
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === currentSlide);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function startSlider() {
+            clearInterval(sliderInterval);
+            sliderInterval = setInterval(nextSlide, 5000);
+        }
+
+        nextButton.addEventListener("click", () => {
+            nextSlide();
+            startSlider();
+        });
+
+        prevButton.addEventListener("click", () => {
+            prevSlide();
+            startSlider();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                showSlide(index);
+                startSlider();
+            });
+        });
+
+        // Pausa el cambio automático mientras el usuario interactúa con el slider.
+        const sliderContainer = document.querySelector(".slider-container");
+        sliderContainer.addEventListener("mouseenter", () => clearInterval(sliderInterval));
+        sliderContainer.addEventListener("mouseleave", startSlider);
+
+        showSlide(0);
+        startSlider();
+    </script>
 </body>
 </html>
