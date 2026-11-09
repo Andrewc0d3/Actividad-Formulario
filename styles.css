@@ -1,0 +1,481 @@
+
+/* =========================================
+   GAMING WORLD
+   FUTURISTIC GAMING DESIGN
+   Verde neón + Azul + Violeta
+========================================= */
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            #00a87855,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            #4930b455,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #041b19,
+            #080c29,
+            #10103a
+        );
+
+    color: #ffffff;
+}
+
+/* FONDO DECORATIVO */
+
+.background-effect {
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #00e5a00a,
+            transparent 60%
+        );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.container {
+    width: 100%;
+    max-width: 550px;
+
+    padding: 40px 38px;
+
+    background: linear-gradient(
+        145deg,
+        #0b332b,
+        #102c36,
+        #10143b
+    );
+
+    border: 1px solid #00e5a0;
+    border-radius: 24px;
+
+    box-shadow:
+        0 0 20px #00e5a044,
+        0 0 50px #00b98133,
+        0 0 80px #3436a833;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* LÍNEA SUPERIOR DECORATIVA */
+
+.container::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00e5a0,
+        #7154ec,
+        transparent
+    );
+
+    box-shadow: 0 0 15px #00e5a0;
+}
+
+/* HEADER */
+
+.header {
+    margin-bottom: 30px;
+}
+
+/* ICONO */
+
+.logo-icon {
+    font-size: 55px;
+    margin-bottom: 12px;
+
+    filter: drop-shadow(
+        0 0 12px #00e5a0
+    );
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 4px;
+
+    color: #ffffff;
+}
+
+.logo span {
+    color: #00e5a0;
+
+    text-shadow:
+        0 0 12px #00e5a088;
+}
+
+/* ETIQUETA */
+
+.tag {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 9px 17px;
+
+    background: #075b49;
+
+    border: 1px solid #00e5a0;
+    border-radius: 30px;
+
+    color: #8dffda;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 0 12px #00e5a033;
+}
+
+/* BIENVENIDA */
+
+.welcome {
+    margin-top: 25px;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1.3;
+
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #00e5a0,
+        #83ffd5
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #a8d8ca;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* SEPARADOR */
+
+.separator {
+    width: 100%;
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00e5a0,
+        #625be4,
+        transparent
+    );
+}
+
+/* SUSCRIPCIÓN */
+
+.subscription h2 {
+    color: #8dffda;
+
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+.form-description {
+    color: #a8b8c9;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+/* ETIQUETA DEL INPUT */
+
+label {
+    display: block;
+
+    color: #8dffda;
+
+    text-align: left;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+/* CONTENEDOR INPUT */
+
+.input-container {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    background: #061f1a;
+
+    border: 1px solid #087d69;
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    transition: 0.3s;
+}
+
+.input-container:focus-within {
+    border-color: #00e5a0;
+
+    box-shadow:
+        0 0 15px #00e5a066;
+}
+
+.input-icon {
+    color: #00e5a0;
+    font-size: 19px;
+    margin-right: 10px;
+}
+
+/* INPUT EMAIL */
+
+input {
+    width: 100%;
+    padding: 16px 0;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #83bdae;
+}
+
+/* BOTÓN */
+
+button {
+    width: 100%;
+
+    margin-top: 20px;
+    padding: 17px;
+
+    border: none;
+    border-radius: 10px;
+
+    color: #041b19;
+
+    background: linear-gradient(
+        100deg,
+        #087d69,
+        #00b981,
+        #00e5a0
+    );
+
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #00e5a044;
+
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px #00e5a088,
+        0 0 35px #00b98155;
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* MENSAJES */
+
+#mensaje {
+    margin-top: 15px;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.success {
+    color: #72e6a5;
+}
+
+.error {
+    color: #ff7777;
+}
+
+/* PRIVACIDAD */
+
+.privacy {
+    color: #83bdae;
+
+    font-size: 11px;
+
+    margin-top: 18px;
+}
+
+/* BENEFICIOS */
+
+.beneficios {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 35px;
+    padding-top: 25px;
+
+    border-top: 1px solid #087d6955;
+}
+
+.benefit {
+    color: #00e5a0;
+    font-size: 12px;
+}
+
+.benefit span {
+    display: block;
+
+    font-size: 24px;
+    margin-bottom: 8px;
+
+    filter: drop-shadow(
+        0 0 7px #00e5a055
+    );
+}
+
+.benefit p {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 30px;
+
+    color: #83bdae;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.footer span {
+    color: #00e5a0;
+    font-weight: bold;
+}
+
+/* ANIMACIÓN SUAVE */
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 15px #00e5a044;
+    }
+
+    50% {
+        box-shadow: 0 0 25px #00e5a088;
+    }
+}
+
+.container {
+    animation: glow 4s infinite ease-in-out;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 32px 22px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .benefit p {
+        font-size: 9px;
+    }
+
+}

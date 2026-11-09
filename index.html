@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gaming World | Suscripciones</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- FONDO DECORATIVO -->
+    <div class="background-effect"></div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="container">
+
+        <!-- LOGO -->
+        <header class="header">
+
+            <div class="logo-icon">
+                🎮
+            </div>
+
+            <div class="logo">
+                GAMING <span>WORLD</span>
+            </div>
+
+            <div class="tag">
+                YOUR NEXT LEVEL STARTS HERE
+            </div>
+
+        </header>
+
+        <!-- BIENVENIDA -->
+        <section class="welcome">
+
+            <h1>
+                ¡ÚNETE A LA COMUNIDAD!
+            </h1>
+
+            <p class="subtitle">
+                El siguiente nivel te espera.
+                Descubre noticias, videojuegos, novedades
+                y contenido exclusivo diseñado para verdaderos gamers.
+            </p>
+
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- FORMULARIO -->
+        <section class="subscription">
+
+            <h2>
+                DESBLOQUEA NUEVAS EXPERIENCIAS
+            </h2>
+
+            <p class="form-description">
+                Introduce tu correo electrónico y forma parte
+                de nuestra comunidad.
+            </p>
+
+            <form id="formulario">
+
+                <label for="email">
+                    TU CORREO ELECTRÓNICO
+                </label>
+
+                <div class="input-container">
+
+                    <span class="input-icon">✉</span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="user_email"
+                        placeholder="player@example.com"
+                        required
+                    >
+
+                </div>
+
+                <button type="submit" id="boton">
+                    ⚡ ¡QUIERO SUBIR DE NIVEL!
+                </button>
+
+            </form>
+
+            <p id="mensaje" role="status" aria-live="polite"></p>
+
+            <p class="privacy">
+                🔒 Tu información está protegida.
+                No recibirás spam.
+            </p>
+
+        </section>
+
+        <!-- BENEFICIOS -->
+        <section class="beneficios">
+
+            <div class="benefit">
+                <span>🎮</span>
+                <p>GAMING</p>
+            </div>
+
+            <div class="benefit">
+                <span>🏆</span>
+                <p>NOTICIAS</p>
+            </div>
+
+            <div class="benefit">
+                <span>⚡</span>
+                <p>NOVEDADES</p>
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <p>© 2026 GAMING WORLD</p>
+
+            <span>LEVEL UP YOUR EXPERIENCE</span>
+
+        </footer>
+
+    </main>
+
+    <!-- JAVASCRIPT EMAILJS -->
+    <script>
+
+        // INICIALIZAR EMAILJS
+        emailjs.init({
+            publicKey: "9uQByMYAkrXt8btkS"
+        });
+
+        // CAPTURAR FORMULARIO
+        document.getElementById("formulario")
+        .addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+            const boton = document.getElementById("boton");
+            const mensaje = document.getElementById("mensaje");
+
+            boton.disabled = true;
+            boton.textContent = "⚡ ENVIANDO...";
+
+            mensaje.textContent = "";
+
+            try {
+
+                // ENVIAR CORREO
+                await emailjs.sendForm(
+                    "service_4cpwq4h",
+                    "template_p4zz2ff",
+                    this
+                );
+
+                mensaje.textContent =
+                    "¡GG! Te has unido a Gaming World. Revisa tu correo.";
+
+                mensaje.className = "success";
+
+                this.reset();
+
+            } catch(error) {
+
+                console.error("Error:", error);
+
+                mensaje.textContent =
+                    "No se pudo completar la suscripción. Inténtalo nuevamente.";
+
+                mensaje.className = "error";
+
+            } finally {
+
+                boton.disabled = false;
+                boton.textContent = "⚡ ¡QUIERO SUBIR DE NIVEL!";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
